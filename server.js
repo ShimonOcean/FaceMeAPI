@@ -26,29 +26,8 @@ app.use(express.json());
 app.use(cors());
 
 
-// Placeholder for Database
-const database = {
-    users: [
-        {
-            id:'123',
-            name: 'Shimon',
-            password: 'cookies',
-            email: 'me@gmail.com',
-            entries: 0,
-            joined: new Date()
-        }
-    ],
-    login: [
-        {
-            id: '987',
-            hash: '',
-            email: 'me@gmail.com'
-        }
-    ]
-}
-
 app.get('/', (req, res) => {
-    res.send(database.users);
+    res.send('working!');
 })
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt) })
